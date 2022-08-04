@@ -1,4 +1,4 @@
-import websocket
+import websocket, json
 
 class WebsocketHelper:
     def __init__(self, url: str) -> None:
@@ -12,3 +12,8 @@ class WebsocketHelper:
         except Exception as e:
             print(e)
             return False
+
+    def receivePayload(self):
+        for m in self.wss:
+            payload = json.loads(str(m))
+            return payload

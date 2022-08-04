@@ -7,3 +7,4 @@ class Bot:
         self.socket = WebsocketHelper(self.gatewayURL)
 
         self.socket.connectToSocket()
+        print(self.socket.receivePayload())
